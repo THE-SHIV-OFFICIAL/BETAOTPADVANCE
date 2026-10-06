@@ -603,7 +603,7 @@ async def show_servers(e, code, back_to=None):
     parent = _number_menu_back_to.get(e.sender_id, "menu_numbers")
     btns.append([style_btn("Back", parent.encode(), "danger", ICON["back"])])
     premium_service = (
-        "TG-Lion BETA numbers" if code == "tg" else "Grizzly Premium OTP numbers"
+        "BETA numbers" if code == "tg" else "Premium OTP numbers"
     )
     msg = (
         f"<blockquote>{em} <b>{name} — 𝐒ᴇʟᴇᴄᴛ 𝐒ᴇʀᴠᴇʀ</b></blockquote>\n\n"
@@ -611,8 +611,8 @@ async def show_servers(e, code, back_to=None):
         f"{PE_CROWN} <b>Server 1 · Ready Account:</b> ready accounts"
         f"{' and Telegram country stock' if code == 'tg' else ''}; shown when available.\n"
         f"💎 <b>Server 2 · Premium OTP:</b> {premium_service}.\n"
-        f"{PE_GIFT} <b>Server 2.0 · Old Acc:</b> not active; the published TG-Lion API does not document an old-account purchase endpoint.\n"
-        f"{PE_LIGHTNING} <b>Server 3 · Economy OTP:</b> Grizzly economy numbers. No OTP in 10 minutes → auto-cancel and balance returned.\n"
+        f"{PE_GIFT} <b>Server 2.0 · Old Acc:</b> not active\n"
+        f"{PE_LIGHTNING} <b>Server 3 · Economy OTP:</b> economy numbers. No OTP in 10 minutes → auto-cancel and balance returned.\n"
         f"{PE_HEART} <b>Bulk Telegram:</b> contact the owner for bulk-order details.</blockquote>"
     )
     await _edit_or_send(e, msg, btns)
@@ -837,7 +837,7 @@ async def buy_number(bot, e, code, server, country=None):
     except Exception as ex:
         async with get_user_lock(uid):
             cur.execute("UPDATE users SET balance=balance+? WHERE user_id=?", (price, uid)); db.commit()
-        logger.warning("grizzly getNumber: %s", ex)
+        logger.warning("surver 3 getNumber: %s", ex)
         return await e.answer("No number available on this server now. Balance returned — try the other server.", alert=True)
     em, name = NUM_SERVICES[code]
     cur.execute("INSERT INTO number_orders (user_id, platform, server, activation_id, phone, price, cost, status) VALUES (?,?,?,?,?,?,?,?)",
