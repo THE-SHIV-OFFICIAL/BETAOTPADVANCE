@@ -603,13 +603,13 @@ async def show_servers(e, code, back_to=None):
     parent = _number_menu_back_to.get(e.sender_id, "menu_numbers")
     btns.append([style_btn("Back", parent.encode(), "danger", ICON["back"])])
     premium_service = (
-        "BETA numbers" if code == "tg" else "Premium OTP numbers"
+        "Premium BETA numbers" if code == "tg" else "Premium OTP numbers"
     )
     msg = (
         f"<blockquote>{em} <b>{name} — 𝐒ᴇʟᴇᴄᴛ 𝐒ᴇʀᴠᴇʀ</b></blockquote>\n\n"
         "<blockquote>📖 <b>𝐒ᴇʀᴠᴇʀ 𝐆ᴜɪᴅᴇ</b>\n"
         f"{PE_CROWN} <b>Server 1 · Ready Account:</b> ready accounts"
-        f"{' and Telegram country stock' if code == 'tg' else ''}; shown when available.\n"
+        f"{' and Telegram country stock' if code == 'tg' else ''}; shown when available fake and scam tag account are also available.\n"
         f"💎 <b>Server 2 · Premium OTP:</b> {premium_service}.\n"
         f"{PE_GIFT} <b>Server 2.0 · Old Acc:</b> not active\n"
         f"{PE_LIGHTNING} <b>Server 3 · Economy OTP:</b> economy numbers. No OTP in 10 minutes → auto-cancel and balance returned.\n"
