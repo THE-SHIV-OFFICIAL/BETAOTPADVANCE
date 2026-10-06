@@ -4,7 +4,7 @@ from telethon.errors import MessageNotModifiedError
 from database import cur, db, ensure_user, is_user_banned, is_bot_online, is_admin
 from utils.keyboards import get_persistent_menu, get_terms_buttons, get_join_buttons
 from utils.helpers import check_channel_joined
-from config import PE_FLOWER, PE_LOCATION, P_OFF, PE_HEART, PE_GIFT, P_GIFT, P_GLOBE, P_INR
+from config import PE_FLOWER, PE_LOCATION, P_OFF, PE_HEART, PE_GIFT, P_GIFT, P_GLOBE, P_INR, LOG_CHANNEL_ID, bot
 from utils.states import session_buy_state, deposit_input
 
 BANNER = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "image.jpg")
